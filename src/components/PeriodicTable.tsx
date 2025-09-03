@@ -35,4 +35,9 @@ const PeriodicTable: React.FC = () => {
 const getColumn = (element: Element): number => {
     if (typeof element.group === 'number') return element.group;
     // Handle special cases (e.g., lantanides/actinides in g)
-}
+    if (element.atomicNumber >= 57 && element.atomicNumber <= 71) return 3; // Lanthanides
+    if (element.atomicNumber >= 80 && element.atomicNumber <= 103) return 3; // Actinides
+    return 1; // Fallback
+};
+
+const getRow = (elelment: Element)
