@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { elements } from '../data/elements';
 import type { Element } from '../data/elements';
 import ElementModal from './ElementModal';
 import Legend from './Legend'
 import { getCategoryColor } from '../utils';
+import "../index.css";
+import Article from './article';
 
 const PeriodicTable: React.FC = () => {
   const [selectedElement, setSelectedElement] = useState<Element | null>(null);
@@ -15,14 +17,15 @@ const PeriodicTable: React.FC = () => {
   console.log([...new Set(elements.map((e) => e.category))])
 
   return (
-    <div className="p-4 bg-gray-100">
+    <div className="w-full h-full p-4 bg-gray-100 dark:bg-neutral-800">
+        <h1 className = "flex items-center justify-center text-5xl font-sans dark:text-nonmetal-400/60">The Periodic Table of the Elements</h1>
         <Legend elements={elements}/>
-    <div className='grid grid-cols-18 gap-1 p-4 bg-gray-200'>
+    <div className='grid grid-cols-18 gap-1 p-4 bg-gray-200 dark:bg-neutral-800'>
         {elements.map((element) => (
             <button
                 key = {element.atomicNumber}
                 onClick = {() => setSelectedElement(element)}
-                className={`w-24 h-16 flex flex-col items-center justify-center border border-gray-300 transition-colors text-center truncate ${getCategoryColor(element.category)} ${normalizeCategory(element.category) === 'post-transition-metal' || normalizeCategory(element.category) === 'alkaline-earth-metal' ? 'text-gray-700' : 'text-white'} ${getRow(element) >= 8 ? 'mt-4' : ''}`}
+                className={`w-24 h-16 flex flex-col items-center justify-center border border-gray-300 transition-colors text-center truncate ${getCategoryColor(element.category)} ${normalizeCategory(element.category) === 'post-transition-metal' || normalizeCategory(element.category) === 'alkaline-earth-metal' ? 'text-gray-700' : 'text-white'} ${getRow(element) >= 8 ? 'mt-4' : ''} dark:text-white dark:hover:text-gray-800`}
                 style = {{ gridColumn: getColumn(element), gridRow: getRow(element) }}
             >
                 <div className = "w-full">
@@ -55,6 +58,7 @@ const PeriodicTable: React.FC = () => {
             />
         )}
     </div>
+    <Article />
     </div>
   );
 };
