@@ -45,14 +45,14 @@ const ElementModal: React.FC<ElementModalProps> = ({ element, onClose }) => {
         <motion.div
           initial = {{ scale: 0.9 }}
           animate = {{ scale: 1 }}
-          className = "bg-white p-6 rounded-lg shadow-lg max-w-md w-full"
+          className = "bg-white/80 dark:bg-neutral-800/90 p-6 rounded-lg shadow-lg max-w-md w-full"
           onClick = {(e) => e.stopPropagation()}
         >
-          <h2 className = "text-2xl font-bold mb-4 text-blue-800">
+          <h2 className = "text-2xl font-bold mb-4 dark:text-nonmetal-400 text-halogen-400">
             {element.name} ({element.symbol})
           </h2>
 
-          <div className = "grid grid-cols-2 gap-2 text-sm">
+          <div className = "grid grid-cols-2 gap-2 text-sm dark:text-neutral-200 capitalize">
             {properties.map((prop) => (
               <React.Fragment key = {prop.key}>
                 <span className = "font-semibold">{prop.label}:</span>
@@ -62,7 +62,7 @@ const ElementModal: React.FC<ElementModalProps> = ({ element, onClose }) => {
           </div>
           <button
             onClick = {onClose}
-            className = "mt-4 px-2 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className = "mt-4 px-2 py-2 bg-halogen-400 dark:bg-nonmetal-400 text-white rounded hover:bg-halogen-400/80 dark:hover:bg-nonmetal-400/90"
           >
             Close
           </button>

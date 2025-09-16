@@ -17,15 +17,15 @@ const PeriodicTable: React.FC = () => {
   console.log([...new Set(elements.map((e) => e.category))])
 
   return (
-    <div className="w-full h-full p-4 bg-gray-100 dark:bg-neutral-800">
-        <h1 className = "flex items-center justify-center text-5xl font-sans dark:text-nonmetal-400/60">The Periodic Table of the Elements</h1>
+    <div className="min-w-full min-h-full p-4 bg-gray-100 dark:bg-neutral-800">
+        <h1 className = "flex items-center justify-center text-5xl font-sans font-bold text-halogen-400 dark:text-nonmetal-400/60">The Periodic Table of the Elements</h1>
         <Legend elements={elements}/>
-    <div className='grid grid-cols-18 gap-1 p-4 bg-gray-200 dark:bg-neutral-800'>
+    <div className='grid grid-cols-18 gap-1 p-4 bg-gray-200 dark:bg-neutral-800 max-w-view'>
         {elements.map((element) => (
             <button
                 key = {element.atomicNumber}
                 onClick = {() => setSelectedElement(element)}
-                className={`w-24 h-16 flex flex-col items-center justify-center border border-gray-300 transition-colors text-center truncate ${getCategoryColor(element.category)} ${normalizeCategory(element.category) === 'post-transition-metal' || normalizeCategory(element.category) === 'alkaline-earth-metal' ? 'text-gray-700' : 'text-white'} ${getRow(element) >= 8 ? 'mt-4' : ''} dark:text-white dark:hover:text-gray-800`}
+                className={`w-24 h-16 flex flex-col items-center justify-center border border-gray-300 transition-colors text-center truncate ${getCategoryColor(element.category)} ${normalizeCategory(element.category) === 'post-transition-metal' || normalizeCategory(element.category) === 'alkaline-earth-metal' ? 'text-gray-700' : 'text-white'} ${getRow(element) >= 8 ? 'mt-4' : ''} dark:text-white hover:text-gray-800`}
                 style = {{ gridColumn: getColumn(element), gridRow: getRow(element) }}
             >
                 <div className = "w-full">

@@ -9,11 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TransitionMetalsRouteImport } from './routes/transition-metals'
 import { Route as TestingRouteImport } from './routes/testing'
 import { Route as TableRouteImport } from './routes/table'
+import { Route as PostTransitionMetalsRouteImport } from './routes/post-transition-metals'
+import { Route as NonmetalsRouteImport } from './routes/nonmetals'
+import { Route as NobleGasesRouteImport } from './routes/noble-gases'
+import { Route as MetalloidsRouteImport } from './routes/metalloids'
+import { Route as LanthanidesRouteImport } from './routes/lanthanides'
+import { Route as HalogensRouteImport } from './routes/halogens'
+import { Route as AlkalineEarthMetalsRouteImport } from './routes/alkaline-earth-metals'
+import { Route as AlkaliMetalsRouteImport } from './routes/alkali-metals'
+import { Route as ActinidesRouteImport } from './routes/actinides'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TransitionMetalsRoute = TransitionMetalsRouteImport.update({
+  id: '/transition-metals',
+  path: '/transition-metals',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TestingRoute = TestingRouteImport.update({
   id: '/testing',
   path: '/testing',
@@ -22,6 +37,51 @@ const TestingRoute = TestingRouteImport.update({
 const TableRoute = TableRouteImport.update({
   id: '/table',
   path: '/table',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PostTransitionMetalsRoute = PostTransitionMetalsRouteImport.update({
+  id: '/post-transition-metals',
+  path: '/post-transition-metals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NonmetalsRoute = NonmetalsRouteImport.update({
+  id: '/nonmetals',
+  path: '/nonmetals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NobleGasesRoute = NobleGasesRouteImport.update({
+  id: '/noble-gases',
+  path: '/noble-gases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MetalloidsRoute = MetalloidsRouteImport.update({
+  id: '/metalloids',
+  path: '/metalloids',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LanthanidesRoute = LanthanidesRouteImport.update({
+  id: '/lanthanides',
+  path: '/lanthanides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HalogensRoute = HalogensRouteImport.update({
+  id: '/halogens',
+  path: '/halogens',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlkalineEarthMetalsRoute = AlkalineEarthMetalsRouteImport.update({
+  id: '/alkaline-earth-metals',
+  path: '/alkaline-earth-metals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlkaliMetalsRoute = AlkaliMetalsRouteImport.update({
+  id: '/alkali-metals',
+  path: '/alkali-metals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActinidesRoute = ActinidesRouteImport.update({
+  id: '/actinides',
+  path: '/actinides',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -38,39 +98,129 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/actinides': typeof ActinidesRoute
+  '/alkali-metals': typeof AlkaliMetalsRoute
+  '/alkaline-earth-metals': typeof AlkalineEarthMetalsRoute
+  '/halogens': typeof HalogensRoute
+  '/lanthanides': typeof LanthanidesRoute
+  '/metalloids': typeof MetalloidsRoute
+  '/noble-gases': typeof NobleGasesRoute
+  '/nonmetals': typeof NonmetalsRoute
+  '/post-transition-metals': typeof PostTransitionMetalsRoute
   '/table': typeof TableRoute
   '/testing': typeof TestingRoute
+  '/transition-metals': typeof TransitionMetalsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/actinides': typeof ActinidesRoute
+  '/alkali-metals': typeof AlkaliMetalsRoute
+  '/alkaline-earth-metals': typeof AlkalineEarthMetalsRoute
+  '/halogens': typeof HalogensRoute
+  '/lanthanides': typeof LanthanidesRoute
+  '/metalloids': typeof MetalloidsRoute
+  '/noble-gases': typeof NobleGasesRoute
+  '/nonmetals': typeof NonmetalsRoute
+  '/post-transition-metals': typeof PostTransitionMetalsRoute
   '/table': typeof TableRoute
   '/testing': typeof TestingRoute
+  '/transition-metals': typeof TransitionMetalsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/actinides': typeof ActinidesRoute
+  '/alkali-metals': typeof AlkaliMetalsRoute
+  '/alkaline-earth-metals': typeof AlkalineEarthMetalsRoute
+  '/halogens': typeof HalogensRoute
+  '/lanthanides': typeof LanthanidesRoute
+  '/metalloids': typeof MetalloidsRoute
+  '/noble-gases': typeof NobleGasesRoute
+  '/nonmetals': typeof NonmetalsRoute
+  '/post-transition-metals': typeof PostTransitionMetalsRoute
   '/table': typeof TableRoute
   '/testing': typeof TestingRoute
+  '/transition-metals': typeof TransitionMetalsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/table' | '/testing'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/actinides'
+    | '/alkali-metals'
+    | '/alkaline-earth-metals'
+    | '/halogens'
+    | '/lanthanides'
+    | '/metalloids'
+    | '/noble-gases'
+    | '/nonmetals'
+    | '/post-transition-metals'
+    | '/table'
+    | '/testing'
+    | '/transition-metals'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/table' | '/testing'
-  id: '__root__' | '/' | '/about' | '/table' | '/testing'
+  to:
+    | '/'
+    | '/about'
+    | '/actinides'
+    | '/alkali-metals'
+    | '/alkaline-earth-metals'
+    | '/halogens'
+    | '/lanthanides'
+    | '/metalloids'
+    | '/noble-gases'
+    | '/nonmetals'
+    | '/post-transition-metals'
+    | '/table'
+    | '/testing'
+    | '/transition-metals'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/actinides'
+    | '/alkali-metals'
+    | '/alkaline-earth-metals'
+    | '/halogens'
+    | '/lanthanides'
+    | '/metalloids'
+    | '/noble-gases'
+    | '/nonmetals'
+    | '/post-transition-metals'
+    | '/table'
+    | '/testing'
+    | '/transition-metals'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ActinidesRoute: typeof ActinidesRoute
+  AlkaliMetalsRoute: typeof AlkaliMetalsRoute
+  AlkalineEarthMetalsRoute: typeof AlkalineEarthMetalsRoute
+  HalogensRoute: typeof HalogensRoute
+  LanthanidesRoute: typeof LanthanidesRoute
+  MetalloidsRoute: typeof MetalloidsRoute
+  NobleGasesRoute: typeof NobleGasesRoute
+  NonmetalsRoute: typeof NonmetalsRoute
+  PostTransitionMetalsRoute: typeof PostTransitionMetalsRoute
   TableRoute: typeof TableRoute
   TestingRoute: typeof TestingRoute
+  TransitionMetalsRoute: typeof TransitionMetalsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/transition-metals': {
+      id: '/transition-metals'
+      path: '/transition-metals'
+      fullPath: '/transition-metals'
+      preLoaderRoute: typeof TransitionMetalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/testing': {
       id: '/testing'
       path: '/testing'
@@ -83,6 +233,69 @@ declare module '@tanstack/react-router' {
       path: '/table'
       fullPath: '/table'
       preLoaderRoute: typeof TableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/post-transition-metals': {
+      id: '/post-transition-metals'
+      path: '/post-transition-metals'
+      fullPath: '/post-transition-metals'
+      preLoaderRoute: typeof PostTransitionMetalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nonmetals': {
+      id: '/nonmetals'
+      path: '/nonmetals'
+      fullPath: '/nonmetals'
+      preLoaderRoute: typeof NonmetalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noble-gases': {
+      id: '/noble-gases'
+      path: '/noble-gases'
+      fullPath: '/noble-gases'
+      preLoaderRoute: typeof NobleGasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/metalloids': {
+      id: '/metalloids'
+      path: '/metalloids'
+      fullPath: '/metalloids'
+      preLoaderRoute: typeof MetalloidsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lanthanides': {
+      id: '/lanthanides'
+      path: '/lanthanides'
+      fullPath: '/lanthanides'
+      preLoaderRoute: typeof LanthanidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/halogens': {
+      id: '/halogens'
+      path: '/halogens'
+      fullPath: '/halogens'
+      preLoaderRoute: typeof HalogensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alkaline-earth-metals': {
+      id: '/alkaline-earth-metals'
+      path: '/alkaline-earth-metals'
+      fullPath: '/alkaline-earth-metals'
+      preLoaderRoute: typeof AlkalineEarthMetalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alkali-metals': {
+      id: '/alkali-metals'
+      path: '/alkali-metals'
+      fullPath: '/alkali-metals'
+      preLoaderRoute: typeof AlkaliMetalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actinides': {
+      id: '/actinides'
+      path: '/actinides'
+      fullPath: '/actinides'
+      preLoaderRoute: typeof ActinidesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -105,8 +318,18 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ActinidesRoute: ActinidesRoute,
+  AlkaliMetalsRoute: AlkaliMetalsRoute,
+  AlkalineEarthMetalsRoute: AlkalineEarthMetalsRoute,
+  HalogensRoute: HalogensRoute,
+  LanthanidesRoute: LanthanidesRoute,
+  MetalloidsRoute: MetalloidsRoute,
+  NobleGasesRoute: NobleGasesRoute,
+  NonmetalsRoute: NonmetalsRoute,
+  PostTransitionMetalsRoute: PostTransitionMetalsRoute,
   TableRoute: TableRoute,
   TestingRoute: TestingRoute,
+  TransitionMetalsRoute: TransitionMetalsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
