@@ -45,7 +45,7 @@ const ElementModal: React.FC<ElementModalProps> = ({ element, onClose }) => {
         <motion.div
           initial = {{ scale: 0.9 }}
           animate = {{ scale: 1 }}
-          className = "bg-white/80 dark:bg-neutral-800/90 p-6 rounded-lg shadow-lg max-w-md w-full"
+          className = "bg-white dark:bg-neutral-800/90 p-6 rounded-lg shadow-lg max-w-md w-full"
           onClick = {(e) => e.stopPropagation()}
         >
           <h2 className = "text-2xl font-bold mb-4 dark:text-nonmetal-400 text-halogen-400">

@@ -1,0 +1,10 @@
+import { createFileRoute } from '@tanstack/react-router'
+import ActinidesEssay from "../../components/Articles/ActinidesEssay"
+
+export const Route = createFileRoute('/categories/post-transition-metal')({
+  component: RouteComponent,
+})
+
+function RouteComponent() {
+  return <ActinidesEssay />
+}

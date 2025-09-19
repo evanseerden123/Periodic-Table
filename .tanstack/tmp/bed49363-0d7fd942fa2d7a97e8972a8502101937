@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/nonmetals')({
+export const Route = createFileRoute('/table/noble-gas')({
   component: RouteComponent,
 })
 

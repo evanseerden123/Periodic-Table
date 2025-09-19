@@ -9,26 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TransitionMetalsRouteImport } from './routes/transition-metals'
 import { Route as TestingRouteImport } from './routes/testing'
 import { Route as TableRouteImport } from './routes/table'
-import { Route as PostTransitionMetalsRouteImport } from './routes/post-transition-metals'
-import { Route as NonmetalsRouteImport } from './routes/nonmetals'
-import { Route as NobleGasesRouteImport } from './routes/noble-gases'
-import { Route as MetalloidsRouteImport } from './routes/metalloids'
-import { Route as LanthanidesRouteImport } from './routes/lanthanides'
-import { Route as HalogensRouteImport } from './routes/halogens'
-import { Route as AlkalineEarthMetalsRouteImport } from './routes/alkaline-earth-metals'
-import { Route as AlkaliMetalsRouteImport } from './routes/alkali-metals'
-import { Route as ActinidesRouteImport } from './routes/actinides'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CategoriesTransitionMetalRouteImport } from './routes/categories/transition-metal'
+import { Route as CategoriesPostTransitionMetalRouteImport } from './routes/categories/post-transition-metal'
+import { Route as CategoriesNonmetalRouteImport } from './routes/categories/nonmetal'
+import { Route as CategoriesNobleGasRouteImport } from './routes/categories/noble-gas'
+import { Route as CategoriesMetalloidRouteImport } from './routes/categories/metalloid'
+import { Route as CategoriesLanthanideRouteImport } from './routes/categories/lanthanide'
+import { Route as CategoriesHalogenRouteImport } from './routes/categories/halogen'
+import { Route as CategoriesAlkalineEarthMetalRouteImport } from './routes/categories/alkaline-earth-metal'
+import { Route as CategoriesAlkaliMetalRouteImport } from './routes/categories/alkali-metal'
+import { Route as CategoriesActinideRouteImport } from './routes/categories/actinide'
 
-const TransitionMetalsRoute = TransitionMetalsRouteImport.update({
-  id: '/transition-metals',
-  path: '/transition-metals',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const TestingRoute = TestingRouteImport.update({
   id: '/testing',
   path: '/testing',
@@ -37,51 +32,6 @@ const TestingRoute = TestingRouteImport.update({
 const TableRoute = TableRouteImport.update({
   id: '/table',
   path: '/table',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PostTransitionMetalsRoute = PostTransitionMetalsRouteImport.update({
-  id: '/post-transition-metals',
-  path: '/post-transition-metals',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NonmetalsRoute = NonmetalsRouteImport.update({
-  id: '/nonmetals',
-  path: '/nonmetals',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NobleGasesRoute = NobleGasesRouteImport.update({
-  id: '/noble-gases',
-  path: '/noble-gases',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MetalloidsRoute = MetalloidsRouteImport.update({
-  id: '/metalloids',
-  path: '/metalloids',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LanthanidesRoute = LanthanidesRouteImport.update({
-  id: '/lanthanides',
-  path: '/lanthanides',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HalogensRoute = HalogensRouteImport.update({
-  id: '/halogens',
-  path: '/halogens',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AlkalineEarthMetalsRoute = AlkalineEarthMetalsRouteImport.update({
-  id: '/alkaline-earth-metals',
-  path: '/alkaline-earth-metals',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AlkaliMetalsRoute = AlkaliMetalsRouteImport.update({
-  id: '/alkali-metals',
-  path: '/alkali-metals',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ActinidesRoute = ActinidesRouteImport.update({
-  id: '/actinides',
-  path: '/actinides',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -94,133 +44,179 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CategoriesTransitionMetalRoute =
+  CategoriesTransitionMetalRouteImport.update({
+    id: '/categories/transition-metal',
+    path: '/categories/transition-metal',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CategoriesPostTransitionMetalRoute =
+  CategoriesPostTransitionMetalRouteImport.update({
+    id: '/categories/post-transition-metal',
+    path: '/categories/post-transition-metal',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CategoriesNonmetalRoute = CategoriesNonmetalRouteImport.update({
+  id: '/categories/nonmetal',
+  path: '/categories/nonmetal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesNobleGasRoute = CategoriesNobleGasRouteImport.update({
+  id: '/categories/noble-gas',
+  path: '/categories/noble-gas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesMetalloidRoute = CategoriesMetalloidRouteImport.update({
+  id: '/categories/metalloid',
+  path: '/categories/metalloid',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesLanthanideRoute = CategoriesLanthanideRouteImport.update({
+  id: '/categories/lanthanide',
+  path: '/categories/lanthanide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesHalogenRoute = CategoriesHalogenRouteImport.update({
+  id: '/categories/halogen',
+  path: '/categories/halogen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesAlkalineEarthMetalRoute =
+  CategoriesAlkalineEarthMetalRouteImport.update({
+    id: '/categories/alkaline-earth-metal',
+    path: '/categories/alkaline-earth-metal',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CategoriesAlkaliMetalRoute = CategoriesAlkaliMetalRouteImport.update({
+  id: '/categories/alkali-metal',
+  path: '/categories/alkali-metal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesActinideRoute = CategoriesActinideRouteImport.update({
+  id: '/categories/actinide',
+  path: '/categories/actinide',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/actinides': typeof ActinidesRoute
-  '/alkali-metals': typeof AlkaliMetalsRoute
-  '/alkaline-earth-metals': typeof AlkalineEarthMetalsRoute
-  '/halogens': typeof HalogensRoute
-  '/lanthanides': typeof LanthanidesRoute
-  '/metalloids': typeof MetalloidsRoute
-  '/noble-gases': typeof NobleGasesRoute
-  '/nonmetals': typeof NonmetalsRoute
-  '/post-transition-metals': typeof PostTransitionMetalsRoute
   '/table': typeof TableRoute
   '/testing': typeof TestingRoute
-  '/transition-metals': typeof TransitionMetalsRoute
+  '/categories/actinide': typeof CategoriesActinideRoute
+  '/categories/alkali-metal': typeof CategoriesAlkaliMetalRoute
+  '/categories/alkaline-earth-metal': typeof CategoriesAlkalineEarthMetalRoute
+  '/categories/halogen': typeof CategoriesHalogenRoute
+  '/categories/lanthanide': typeof CategoriesLanthanideRoute
+  '/categories/metalloid': typeof CategoriesMetalloidRoute
+  '/categories/noble-gas': typeof CategoriesNobleGasRoute
+  '/categories/nonmetal': typeof CategoriesNonmetalRoute
+  '/categories/post-transition-metal': typeof CategoriesPostTransitionMetalRoute
+  '/categories/transition-metal': typeof CategoriesTransitionMetalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/actinides': typeof ActinidesRoute
-  '/alkali-metals': typeof AlkaliMetalsRoute
-  '/alkaline-earth-metals': typeof AlkalineEarthMetalsRoute
-  '/halogens': typeof HalogensRoute
-  '/lanthanides': typeof LanthanidesRoute
-  '/metalloids': typeof MetalloidsRoute
-  '/noble-gases': typeof NobleGasesRoute
-  '/nonmetals': typeof NonmetalsRoute
-  '/post-transition-metals': typeof PostTransitionMetalsRoute
   '/table': typeof TableRoute
   '/testing': typeof TestingRoute
-  '/transition-metals': typeof TransitionMetalsRoute
+  '/categories/actinide': typeof CategoriesActinideRoute
+  '/categories/alkali-metal': typeof CategoriesAlkaliMetalRoute
+  '/categories/alkaline-earth-metal': typeof CategoriesAlkalineEarthMetalRoute
+  '/categories/halogen': typeof CategoriesHalogenRoute
+  '/categories/lanthanide': typeof CategoriesLanthanideRoute
+  '/categories/metalloid': typeof CategoriesMetalloidRoute
+  '/categories/noble-gas': typeof CategoriesNobleGasRoute
+  '/categories/nonmetal': typeof CategoriesNonmetalRoute
+  '/categories/post-transition-metal': typeof CategoriesPostTransitionMetalRoute
+  '/categories/transition-metal': typeof CategoriesTransitionMetalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/actinides': typeof ActinidesRoute
-  '/alkali-metals': typeof AlkaliMetalsRoute
-  '/alkaline-earth-metals': typeof AlkalineEarthMetalsRoute
-  '/halogens': typeof HalogensRoute
-  '/lanthanides': typeof LanthanidesRoute
-  '/metalloids': typeof MetalloidsRoute
-  '/noble-gases': typeof NobleGasesRoute
-  '/nonmetals': typeof NonmetalsRoute
-  '/post-transition-metals': typeof PostTransitionMetalsRoute
   '/table': typeof TableRoute
   '/testing': typeof TestingRoute
-  '/transition-metals': typeof TransitionMetalsRoute
+  '/categories/actinide': typeof CategoriesActinideRoute
+  '/categories/alkali-metal': typeof CategoriesAlkaliMetalRoute
+  '/categories/alkaline-earth-metal': typeof CategoriesAlkalineEarthMetalRoute
+  '/categories/halogen': typeof CategoriesHalogenRoute
+  '/categories/lanthanide': typeof CategoriesLanthanideRoute
+  '/categories/metalloid': typeof CategoriesMetalloidRoute
+  '/categories/noble-gas': typeof CategoriesNobleGasRoute
+  '/categories/nonmetal': typeof CategoriesNonmetalRoute
+  '/categories/post-transition-metal': typeof CategoriesPostTransitionMetalRoute
+  '/categories/transition-metal': typeof CategoriesTransitionMetalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
-    | '/actinides'
-    | '/alkali-metals'
-    | '/alkaline-earth-metals'
-    | '/halogens'
-    | '/lanthanides'
-    | '/metalloids'
-    | '/noble-gases'
-    | '/nonmetals'
-    | '/post-transition-metals'
     | '/table'
     | '/testing'
-    | '/transition-metals'
+    | '/categories/actinide'
+    | '/categories/alkali-metal'
+    | '/categories/alkaline-earth-metal'
+    | '/categories/halogen'
+    | '/categories/lanthanide'
+    | '/categories/metalloid'
+    | '/categories/noble-gas'
+    | '/categories/nonmetal'
+    | '/categories/post-transition-metal'
+    | '/categories/transition-metal'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/actinides'
-    | '/alkali-metals'
-    | '/alkaline-earth-metals'
-    | '/halogens'
-    | '/lanthanides'
-    | '/metalloids'
-    | '/noble-gases'
-    | '/nonmetals'
-    | '/post-transition-metals'
     | '/table'
     | '/testing'
-    | '/transition-metals'
+    | '/categories/actinide'
+    | '/categories/alkali-metal'
+    | '/categories/alkaline-earth-metal'
+    | '/categories/halogen'
+    | '/categories/lanthanide'
+    | '/categories/metalloid'
+    | '/categories/noble-gas'
+    | '/categories/nonmetal'
+    | '/categories/post-transition-metal'
+    | '/categories/transition-metal'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/actinides'
-    | '/alkali-metals'
-    | '/alkaline-earth-metals'
-    | '/halogens'
-    | '/lanthanides'
-    | '/metalloids'
-    | '/noble-gases'
-    | '/nonmetals'
-    | '/post-transition-metals'
     | '/table'
     | '/testing'
-    | '/transition-metals'
+    | '/categories/actinide'
+    | '/categories/alkali-metal'
+    | '/categories/alkaline-earth-metal'
+    | '/categories/halogen'
+    | '/categories/lanthanide'
+    | '/categories/metalloid'
+    | '/categories/noble-gas'
+    | '/categories/nonmetal'
+    | '/categories/post-transition-metal'
+    | '/categories/transition-metal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ActinidesRoute: typeof ActinidesRoute
-  AlkaliMetalsRoute: typeof AlkaliMetalsRoute
-  AlkalineEarthMetalsRoute: typeof AlkalineEarthMetalsRoute
-  HalogensRoute: typeof HalogensRoute
-  LanthanidesRoute: typeof LanthanidesRoute
-  MetalloidsRoute: typeof MetalloidsRoute
-  NobleGasesRoute: typeof NobleGasesRoute
-  NonmetalsRoute: typeof NonmetalsRoute
-  PostTransitionMetalsRoute: typeof PostTransitionMetalsRoute
   TableRoute: typeof TableRoute
   TestingRoute: typeof TestingRoute
-  TransitionMetalsRoute: typeof TransitionMetalsRoute
+  CategoriesActinideRoute: typeof CategoriesActinideRoute
+  CategoriesAlkaliMetalRoute: typeof CategoriesAlkaliMetalRoute
+  CategoriesAlkalineEarthMetalRoute: typeof CategoriesAlkalineEarthMetalRoute
+  CategoriesHalogenRoute: typeof CategoriesHalogenRoute
+  CategoriesLanthanideRoute: typeof CategoriesLanthanideRoute
+  CategoriesMetalloidRoute: typeof CategoriesMetalloidRoute
+  CategoriesNobleGasRoute: typeof CategoriesNobleGasRoute
+  CategoriesNonmetalRoute: typeof CategoriesNonmetalRoute
+  CategoriesPostTransitionMetalRoute: typeof CategoriesPostTransitionMetalRoute
+  CategoriesTransitionMetalRoute: typeof CategoriesTransitionMetalRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/transition-metals': {
-      id: '/transition-metals'
-      path: '/transition-metals'
-      fullPath: '/transition-metals'
-      preLoaderRoute: typeof TransitionMetalsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/testing': {
       id: '/testing'
       path: '/testing'
@@ -233,69 +229,6 @@ declare module '@tanstack/react-router' {
       path: '/table'
       fullPath: '/table'
       preLoaderRoute: typeof TableRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/post-transition-metals': {
-      id: '/post-transition-metals'
-      path: '/post-transition-metals'
-      fullPath: '/post-transition-metals'
-      preLoaderRoute: typeof PostTransitionMetalsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/nonmetals': {
-      id: '/nonmetals'
-      path: '/nonmetals'
-      fullPath: '/nonmetals'
-      preLoaderRoute: typeof NonmetalsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/noble-gases': {
-      id: '/noble-gases'
-      path: '/noble-gases'
-      fullPath: '/noble-gases'
-      preLoaderRoute: typeof NobleGasesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/metalloids': {
-      id: '/metalloids'
-      path: '/metalloids'
-      fullPath: '/metalloids'
-      preLoaderRoute: typeof MetalloidsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lanthanides': {
-      id: '/lanthanides'
-      path: '/lanthanides'
-      fullPath: '/lanthanides'
-      preLoaderRoute: typeof LanthanidesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/halogens': {
-      id: '/halogens'
-      path: '/halogens'
-      fullPath: '/halogens'
-      preLoaderRoute: typeof HalogensRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/alkaline-earth-metals': {
-      id: '/alkaline-earth-metals'
-      path: '/alkaline-earth-metals'
-      fullPath: '/alkaline-earth-metals'
-      preLoaderRoute: typeof AlkalineEarthMetalsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/alkali-metals': {
-      id: '/alkali-metals'
-      path: '/alkali-metals'
-      fullPath: '/alkali-metals'
-      preLoaderRoute: typeof AlkaliMetalsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/actinides': {
-      id: '/actinides'
-      path: '/actinides'
-      fullPath: '/actinides'
-      preLoaderRoute: typeof ActinidesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -312,24 +245,94 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/categories/transition-metal': {
+      id: '/categories/transition-metal'
+      path: '/categories/transition-metal'
+      fullPath: '/categories/transition-metal'
+      preLoaderRoute: typeof CategoriesTransitionMetalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/post-transition-metal': {
+      id: '/categories/post-transition-metal'
+      path: '/categories/post-transition-metal'
+      fullPath: '/categories/post-transition-metal'
+      preLoaderRoute: typeof CategoriesPostTransitionMetalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/nonmetal': {
+      id: '/categories/nonmetal'
+      path: '/categories/nonmetal'
+      fullPath: '/categories/nonmetal'
+      preLoaderRoute: typeof CategoriesNonmetalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/noble-gas': {
+      id: '/categories/noble-gas'
+      path: '/categories/noble-gas'
+      fullPath: '/categories/noble-gas'
+      preLoaderRoute: typeof CategoriesNobleGasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/metalloid': {
+      id: '/categories/metalloid'
+      path: '/categories/metalloid'
+      fullPath: '/categories/metalloid'
+      preLoaderRoute: typeof CategoriesMetalloidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/lanthanide': {
+      id: '/categories/lanthanide'
+      path: '/categories/lanthanide'
+      fullPath: '/categories/lanthanide'
+      preLoaderRoute: typeof CategoriesLanthanideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/halogen': {
+      id: '/categories/halogen'
+      path: '/categories/halogen'
+      fullPath: '/categories/halogen'
+      preLoaderRoute: typeof CategoriesHalogenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/alkaline-earth-metal': {
+      id: '/categories/alkaline-earth-metal'
+      path: '/categories/alkaline-earth-metal'
+      fullPath: '/categories/alkaline-earth-metal'
+      preLoaderRoute: typeof CategoriesAlkalineEarthMetalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/alkali-metal': {
+      id: '/categories/alkali-metal'
+      path: '/categories/alkali-metal'
+      fullPath: '/categories/alkali-metal'
+      preLoaderRoute: typeof CategoriesAlkaliMetalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/actinide': {
+      id: '/categories/actinide'
+      path: '/categories/actinide'
+      fullPath: '/categories/actinide'
+      preLoaderRoute: typeof CategoriesActinideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  ActinidesRoute: ActinidesRoute,
-  AlkaliMetalsRoute: AlkaliMetalsRoute,
-  AlkalineEarthMetalsRoute: AlkalineEarthMetalsRoute,
-  HalogensRoute: HalogensRoute,
-  LanthanidesRoute: LanthanidesRoute,
-  MetalloidsRoute: MetalloidsRoute,
-  NobleGasesRoute: NobleGasesRoute,
-  NonmetalsRoute: NonmetalsRoute,
-  PostTransitionMetalsRoute: PostTransitionMetalsRoute,
   TableRoute: TableRoute,
   TestingRoute: TestingRoute,
-  TransitionMetalsRoute: TransitionMetalsRoute,
+  CategoriesActinideRoute: CategoriesActinideRoute,
+  CategoriesAlkaliMetalRoute: CategoriesAlkaliMetalRoute,
+  CategoriesAlkalineEarthMetalRoute: CategoriesAlkalineEarthMetalRoute,
+  CategoriesHalogenRoute: CategoriesHalogenRoute,
+  CategoriesLanthanideRoute: CategoriesLanthanideRoute,
+  CategoriesMetalloidRoute: CategoriesMetalloidRoute,
+  CategoriesNobleGasRoute: CategoriesNobleGasRoute,
+  CategoriesNonmetalRoute: CategoriesNonmetalRoute,
+  CategoriesPostTransitionMetalRoute: CategoriesPostTransitionMetalRoute,
+  CategoriesTransitionMetalRoute: CategoriesTransitionMetalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
